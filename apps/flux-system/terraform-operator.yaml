@@ -1,0 +1,11 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha1
+kind: Terraform
+metadata:
+  name: aks-infra
+spec:
+  interval: 5m
+  path: ./infra
+  approvePlan: disable  # Aprobación manual para producción
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
